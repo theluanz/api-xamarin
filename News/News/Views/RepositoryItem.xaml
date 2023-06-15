@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="News.Views.RepositoryItem">
+    <ContentView.Content>
+        <Grid Margin="0" BackgroundColor="#F5F5F5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="{Binding name}"
+                   Padding="10"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#333333"
+                   BackgroundColor="Transparent"
+                   VerticalOptions="Center" />
+
+            <Label Text="{Binding description}"
+                   Padding="10"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   FontSize="14"
+                   TextColor="#666666"
+                   BackgroundColor="Transparent"
+                   VerticalOptions="Center" />
+
+            <Label Text="{Binding language}"
+                   Padding="10"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   FontSize="14"
+                   TextColor="#666666"
+                   BackgroundColor="Black"
+                   VerticalOptions="Center" />
+
+            <Label Text="{Binding updated_at, StringFormat='{0:MMMM d, yyyy}'}"
+                   Padding="10"
+                   Grid.Column="1"
+                   Grid.Row="3"
+                   FontSize="14"
+                   TextColor="#666666"
+                   BackgroundColor="Transparent"
+                   VerticalOptions="Center" />
+
+            <BoxView BackgroundColor="#CCCCCC" Grid.Row="4" Grid.ColumnSpan="2" HeightRequest="1" />
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

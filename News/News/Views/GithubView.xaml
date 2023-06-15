@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:News.Views"
+             x:Name="githubview"
+             Title="Repositorios"
+             x:Class="News.Views.GithubView">
+    <ContentPage.Content>
+        <StackLayout Padding="14">
+
+            <CollectionView ItemsSource="{Binding CurrentRepositories.Roots}">
+                <CollectionView.EmptyView>
+                    <Label Text="Loading" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <ContentView.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding BindingContext.ItemSelected, Source={x:Reference githubview}}"
+                                    CommandParameter="{Binding .}" />
+                            </ContentView.GestureRecognizers>
+                            <views:RepositoryItem />
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
